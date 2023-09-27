@@ -1,0 +1,137 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  border: 0.1px solid darkgray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px 20px;
+  background-color:rgb(255, 255, 230);
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr minmax(100px, auto);
+  grid-template-rows: minmax(20px, auto) repeat(minmax(200px, auto), 4);
+  /* grid-auto-rows: minmax(200px, auto); */
+  grid-template-areas:
+    "nav nav nav"
+    "info info photo"
+    "info info photo"
+    "utbildning utbildning utbildning"
+    "erfarenhet erfarenhet erfarenhet";
+}
+
+.container div:not(#språk div, .nav) {
+  margin-top: 10px;
+}
+
+
+.nav {
+  grid-area: nav;
+  font-size: 36px;
+  border: 0.1px solid darkgray;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.info {
+  grid-area: info;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.info ul {
+  list-style-type: none;
+  margin-top: 5px;
+}
+
+.info li {
+    margin-top: 10px;
+}
+
+.info ul a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.utbildning {
+  grid-area: utbildning;
+  background-color:rgb(217, 255, 204);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+.cer_img {
+  width: 20px;
+  height: 20px;
+}
+
+.erfarenhet {
+  grid-area: erfarenhet;
+  background-color: rgb(216, 243, 246);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.erfarenhet ol li {
+    margin-top: 10px;
+}
+
+.photo {
+  grid-area: photo;
+}
+
+.photo img {
+  width: 180px;
+  height: 180px;
+  border: 0.1px solid black;
+  border-radius: 5px;
+  margin-top: 50px;
+  
+}
+
+
+@media (max-width: 400px) {
+  .photo img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+#språk div {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 0.5px black solid;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+#språk ul li div:first-child {
+  margin-left: 30px;
+}
+
+.arb div {
+  background-color: darkgray;
+}
+.sv div:not(#d4),
+.en div:not(#d4) {
+  background-color:darkgray;
+}
+
+a:hover {
+  color: blue;
+}
+
+h4 {
+    margin-top: 5px;
+}
